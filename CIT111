@@ -1,0 +1,71 @@
+package controlStructures;
+import java.util.Scanner;
+/**
+ * Implement logic for checking friend compatability
+ * if statements
+ * @author jeremy.carpenter
+ */
+public class MightWeBeFriends {
+    public static void main(String[] args){
+        
+        Scanner myScanner = new Scanner(System.in);
+        //builds a scanner object and stores
+        //in variable myScanner
+        //read line from user and store in variable
+        int userInput = myScanner.nextInt();
+        System.out.println("You Typed: " + userInput);
+        
+        
+        
+        
+        int responseBach;
+        int responseMajor;
+        int responseSchool ;
+        int responseWork ;
+        int pointsPossible = 1000;
+        int earnedPoints = 0;
+        System.out.println("Welcome to friend picker!");
+        System.out.println("Are you in College? (0 = no, 1 = yes)");
+        
+        Scanner keyboardReader = new Scanner(System.in);
+        responseSchool = keyboardReader.nextInt();
+        
+        if(responseSchool == 1){
+            earnedPoints = earnedPoints + 100;
+            System.out.println("Awesome!");
+            System.out.println("Are you a computer major? (3 = yes, 4 = no)");
+            responseMajor = keyboardReader.nextInt();
+            if(responseMajor == 3){
+                earnedPoints = earnedPoints + 100;
+                System.out.println("Cool me too.");
+            }else if(responseMajor == 4){
+                earnedPoints = earnedPoints - 50;
+                System.out.println("Thats okay.");
+                //if()
+            }
+        }else{
+            System.out.println("Too bad.");
+        System.out.println("Do you work? 0 = no, 1 = yes");
+        responseWork = keyboardReader.nextInt();
+        if(responseWork == 1){
+            earnedPoints = earnedPoints + 100;
+            System.out.println("Thats' good.");
+        }else{
+            earnedPoints = earnedPoints - 100;
+            System.out.println("What do you do then?");
+        }//end else if work
+        
+        
+        }//end school response
+        
+        
+        
+            if(earnedPoints >= 100){
+                System.out.println("We might be friends!");
+        }else {
+                System.out.println("Looks like we can't be friends =(");
+        System.out.println("Final total points:" + earnedPoints);
+            
+            } //end else for earned points
+        }//end else for second path of questions
+}//close class
